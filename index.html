@@ -10,6 +10,62 @@
         rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0b0b;
+      --card: #141414;
+      --text: #e9f1f5;
+      --accent: #00e676;
+      --muted: #a9a9a9;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+    }
+
+    h1, h2, h3 { font-family: 'Bebas Neue', sans-serif; }
+
+    .container { padding-left: 15px; padding-right: 15px; }
+
+    /* Hero */
+    .hero {
+      padding: 60px 15px;
+      text-align: center;
+      background: radial-gradient(circle at top left, rgba(0,230,118,.15), transparent 40%), 
+                  radial-gradient(circle at bottom right, rgba(0,0,0,.25), transparent 40%);
+    }
+    .hero img { max-width: 90px; margin-bottom: 16px; }
+
+    .tagline { font-size: 1.9rem; line-height: 1.15; margin-bottom: 8px; }
+    .neon {
+      color: #1ee08c;
+      text-shadow: 0 0 6px rgba(30,224,140,.8);
+    }
+
+    .btn-custom {
+      background-color: #000;
+      color: #fff;
+      border: 2px solid #00e676;
+      font-weight: 600;
+      padding: .75rem 1.25rem;
+    }
+    .btn-custom:hover { background-color: #00e676; color: #000; }
+
+    .card {
+      background-color: var(--card);
+      color: #fff;
+      border: 1px solid #222;
+      border-radius: 1rem;
+    }
+    .card-img-top { border-radius: 1rem 1rem 0 0; object-fit: cover; }
+
+    .badge-accent {
+      background-color: #00e676; color: #000; font-weight: 700;
+    }
 
     <style>
         body {
