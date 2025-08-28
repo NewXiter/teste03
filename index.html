@@ -1,18 +1,16 @@
+
 <!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Painel Xit - New sensi</title>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- Bootstrap Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Painel Xit - New sensi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <style>
-    /* Variáveis de cor */
     :root {
       --bg: #0b0b0b;
       --card: #141414;
@@ -21,16 +19,14 @@
       --muted: #a9a9a9;
     }
 
-    /* Reset básico */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
+    * { box-sizing: border-box; }
     body {
       background-color: var(--bg);
       color: var(--text);
       font-family: 'Poppins', sans-serif;
-      line-height: 1.6;
+      margin: 0;
     }
-
+  
     /* Cabeçalho banner */
     #banner-cupom {
       background-color: #222;
@@ -53,267 +49,9 @@
       font-size: 1.2rem;
     }
 
-    /* Hero section */
-    .hero {
-      padding: 60px 20px;
-      text-align: center;
-      background: radial-gradient(circle at top left, rgba(0,230,118,.15), transparent 40%), 
-                  radial-gradient(circle at bottom right, rgba(0,0,0,.25), transparent 40%);
-    }
-    .hero img {
-      max-width: 100px;
-      margin-bottom: 16px;
-    }
-    .hero h1 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-    .hero h1 .neon {
-      color: #1ee08c;
-      text-shadow: 0 0 6px rgba(30,224,140,.8);
-    }
-    .hero h1 .neon-vermelho {
-      color: #ff4d4d;
-      text-shadow: 0 0 8px #ff4d4d, 0 0 16px #ff4d4d;
-    }
-    .hero p {
-      font-size: 1rem;
-      margin-top: 10px;
-    }
-    .btn-comprar {
-      margin-top: 20px;
-      font-weight: bold;
-      padding: 0.75rem 1.5rem;
-      font-size: 1.2rem;
-      border-radius: 30px;
-      transition: background 0.3s, transform 0.3s;
-    }
-    .btn-comprar:hover {
-      transform: scale(1.05);
-    }
+    h1, h2, h3 { font-family: 'Bebas Neue', sans-serif; }
 
-    /* Cards de benefícios */
-    .beneficios {
-      padding: 50px 20px;
-    }
-    .beneficios h2 {
-      text-align: center;
-      font-family: 'Bebas Neue', cursive;
-      font-size: 2.2rem;
-      margin-bottom: 40px;
-      color: #00e676;
-      text-shadow: 0 0 6px #00e676;
-    }
-    .cards-row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-    .card-beneficio {
-      background-color: var(--card);
-      border-radius: 1rem;
-      width: 100%;
-      max-width: 350px;
-      padding: 20px;
-      border: 1px solid #222;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .card-beneficio:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 15px #00e676;
-    }
-    .card-beneficio img {
-      width: 60px;
-      margin-bottom: 15px;
-    }
-    .card-beneficio h5 {
-      margin-bottom: 10px;
-      text-align: center;
-    }
-    .card-beneficio p {
-      font-size: 0.9rem;
-    }
-
-    /* Pacotes VIP */
-    .pacotes {
-      padding: 50px 20px;
-      background-color: #0a0a0a;
-    }
-    .pacotes h2 {
-      text-align: center;
-      font-family: 'Bebas Neue', cursive;
-      font-size: 2.2rem;
-      margin-bottom: 30px;
-      color: #fff;
-    }
-    .pacote {
-      max-width: 350px;
-      background-color: #121212;
-      border-radius: 1rem;
-      margin: 20px auto;
-      padding: 20px;
-      border: 2px solid #00ff00;
-      transition: all 0.3s;
-    }
-    .pacote:hover {
-      transform: scale(1.02);
-      box-shadow: 0 0 15px #00ff00;
-    }
-    .pacote img {
-      width: 60%;
-      margin: 10px auto;
-      display: block;
-    }
-    .pacote h3 {
-      text-align: center;
-      margin-bottom: 15px;
-      font-family: 'Bebas Neue', cursive;
-    }
-    .preco {
-      text-align: center;
-      margin: 15px 0;
-    }
-    .preco h3 {
-      text-decoration: line-through;
-      color: red;
-      font-size: 1.4rem;
-    }
-    .preco h4 {
-      color: #00ff00;
-      font-size: 2rem;
-      margin-top: 10px;
-    }
-    /* Botão de compra */
-    .btn-comprar {
-      display: block;
-      width: 100%;
-      text-align: center;
-      padding: 12px;
-      font-size: 1.2rem;
-      font-weight: bold;
-      border-radius: 30px;
-      background-color: #00e676;
-      color: #000;
-      border: none;
-      transition: background 0.3s, transform 0.3s;
-    }
-    .btn-comprar:hover {
-      background-color: #00c853;
-      transform: scale(1.05);
-    }
-
-    /* Depoimentos */
-    .depoimentos {
-      padding: 50px 20px;
-      background-color: #0a0a0a;
-    }
-    .depoimentos h2 {
-      text-align: center;
-      font-family: 'Bebas Neue', cursive;
-      font-size: 2.2rem;
-      margin-bottom: 30px;
-      color: #ff4d4d;
-    }
-    .carousel {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .carousel-item {
-      display: flex;
-      justify-content: center;
-    }
-    .depoimento-card {
-      background-color: #121212;
-      border-radius: 1rem;
-      padding: 20px;
-      width: 100%;
-      max-width: 400px;
-      text-align: center;
-    }
-    .depoimento-card img {
-      width: 80px;
-      border-radius: 50%;
-      margin-bottom: 15px;
-    }
-    .stars {
-      color: #00ff00;
-    }
-
-    /* FAQ */
-    #faq {
-      padding: 50px 20px;
-      border-radius: 16px;
-      background-color: #121212;
-      margin: 50px 0;
-    }
-    #faq h2 {
-      text-align: center;
-      font-family: 'Bebas Neue', cursive;
-      font-size: 2.2rem;
-      margin-bottom: 30px;
-      color: #00ff00;
-      text-shadow: 0 0 6px #00ff00;
-    }
-    .accordion-item {
-      background-color: #1a1a1a;
-      border: 1px solid #00ff00;
-      border-radius: 10px;
-      margin-bottom: 10px;
-    }
-    .accordion-button {
-      background-color: #1a1a1a;
-      color: #fff;
-      font-weight: bold;
-    }
-    .accordion-button:hover,
-    .accordion-button.collapsed {
-      background-color: #00cc00;
-      color: #000;
-    }
-    .accordion-body {
-      background-color: #121212;
-      padding: 15px;
-      font-size: 0.95rem;
-    }
-
-    /* Rodapé */
-    footer {
-      background-color: #222;
-      color: #ccc;
-      padding: 20px;
-      text-align: center;
-      font-size: 0.9rem;
-    }
-    /* Notificações dinâmica */
-    #notificacoes {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      z-index: 9999;
-    }
-    .notificacao {
-      background-color: #0b8200;
-      color: #fff;
-      padding: 10px 15px;
-      border-radius: 8px;
-      margin-top: 10px;
-      display: flex;
-      align-items: center;
-      font-size: 0.9rem;
-      box-shadow: 0 0 10px rgba(0,255,118,0.7);
-      opacity: 0;
-      animation: aparecer 0.5s forwards, desaparecer 0.5s forwards 4.5s;
-    }
-    @keyframes aparecer {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes desaparecer {
-      from { opacity: 1; transform: translateY(0); }
-      to { opacity: 0; transform: translateY(20px); }
-    }
+    .container { padding-left: 15px; padding-right: 15px; }
 
     /* Hero */
     .hero {
@@ -349,7 +87,14 @@
 
     .badge-accent {
       background-color: #00e676; color: #000; font-weight: 700;
-  ;
+    }
+
+    <style>
+        body {
+            background-color: #000;
+            color: white;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
         }
 
         h1 {
@@ -467,6 +212,7 @@
                 transform: scale(1);
                 box-shadow: 0 0 0 0 rgba(0, 255, 0, 0);
             }
+        }
 
         .btn-pulse-green {
             background-color: #00cc00;
@@ -534,166 +280,154 @@
         .accordion-body strong {
             color: #00ff00;
         }
+    </style>
+
+    <style>
+        .notificacao {
+            background-color: #0b8200;
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 10px;
+            margin-top: 10px;
+            font-size: 14px;
+            opacity: 0;
+            animation: aparecer 0.5s forwards, desaparecer 0.5s forwards 4.5s;
+        }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes desaparecer {
+            from {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            to {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+        }
+    </style>
+
+</head>
+
+<body>
   <!-- Banner com cupom -->
   <div id="banner-cupom">
     <strong>USE CUPOM [XITEI] E GANHE DESCONTO!</strong>
   </div>
+     <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <img src="imgs/logo.png" alt="Logo do Produto">
+            <h1 class="display-5">
+               <span class="white-bold">O MELHOR</span>
+                 <span class="neon-red">PAINEL XIT</span>  <span class="white-bold">PRA DAR</span><br>
+                <span class="neon-vermelho">FULl VERMELHO!</span>
+               <span class="fs-6 mt-5">NO</span>  <span class="white-bold">FREE FIRE</span><br>
+                <span class="white-bold"> COM +</span> <span class="neon-red">10K PLAYERS USANDO</span><br>
+            </h1>
 
-  <!-- Hero -->
-  <section class="hero">
+</div> <div class="ratio ratio-16x9 mt-4 video-neon">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SD8KYZ8MRpQ?si=-qPLQXDLwGlh2HY0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+    encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
+    
+    </div>
+            <p class="fs-6 mt-3"> 
+                <strong id="contador-pessoas" class="neon-red">138</strong> usuários ativos agora
+            </p>
+
+            <script>
+                let contador = 138;
+                const elemento = document.getElementById('contador-pessoas');
+
+                function subirPessoas() {
+                    const aumento = Math.floor(Math.random() * 5) + 1;
+                    contador += aumento;
+                    elemento.textContent = contador;
+
+                    const intervalo = Math.floor(Math.random() * 3000) + 2000;
+                    setTimeout(subirPessoas, intervalo);
+                }
+                
+                subirPessoas();
+            </script>
+                 </div>
+       <a href="#lista-beneficios mb-4"
+           <h2 class="btn btn-pulse-green fw-bold px-4 py-2"> COMPRAR XIT AGORA!
+                </a>
+     </div>
+         </div>
+         </div>
+    </section>
+
     <div class="container">
-      <img src="img site/logo2.jpg" alt="Logo do Produto" />
-      <h1>
-        <span class="white-bold">MELHOR</span> <span class="neon-red">PAINEL XIT!</span> <br>
-        <span class="white-bold"> CONSIGAR DAR</span> <br>
-        <span class="neon-vermelho">FULL VERMELHO!</span>
-      </h1>
-      <p class="mt-3"><strong id="contador-pessoas" class="neon-vermelho">138</strong> usuários ativos agora!</p>
-      <div class="ratio ratio-16x9 mt-4 video-neon">
-        <iframe src="https://www.youtube.com/embed/SD8KYZ8MRpQ?si=-qPLQXDLwGlh2HY0" title="YouTube video player" allowfullscreen></iframe>
-      </div>
-      <a href="#beneficios" class="btn btn-pulse-green fw-bold mt-4 btn-comprar">COMPRAR XIT AGORA!</a>
-    </div>
-  </section>
+        <div class="row justify-content-center align-items-center">
 
-  <!-- Benefícios -->
-  <section id="beneficios" class="beneficios">
-    <h2>Por que escolher o Painel Xit?</h2>
-    <div class="cards-row">
-      <!-- Card 1 -->
-      <div class="card-beneficio">
-        <img src="img site/trofeu.png" alt="Vença Todas as Partidas" />
-        <h5>Vença Todas as Partidas</h5>
-        <p>Tenha acesso ao melhor Painel Xit do cenário do Free Fire na palma da sua mão. Full vermelho, sensi que gruda so Capa!, e segurança 100% anti-ban, 
-          anti-blacklist.</p>
-      </div>
-      <!-- Card 2 -->
-      <div class="card-beneficio">
-        <img src="img site/controle.png" alt="Jogabilidade Profissional" />
-        <h5>Jogabilidade Profissional</h5>
-        <p>Transforme sua jogabilidade com comandos precisos e respostas rápidas. Aproveite o melhor Painel agora!</p>
-      </div>
-      <!-- Card 3 -->
-      <div class="card-beneficio">
-        <img src="img site/velocimetro.png" alt="Desempenho Turbinado" />
-        <h5>Desempenho Turbinado!</h5>
-        <p>Resposta rápida e performance máxima em Android e iOS. Domine o jogo com facilidade sem ser desconberto.</p>
-      </div>
-    </div>
-  </section>
+            <div class="col-11 col-lg-3 mt-3 rounded-4">
+                <div class="card p-3">
+                    <img src="imgs/trofeu.png" class="card-img-top" alt="Troféu - Vencer">
+                    <div class="card-body">
+                        <h5 class="card-title">Vença Todas as Partidas</h5>
+                        <p class="card-text"> Tenha acesso ao melhor Painel Xit do Cenário do Free Fire na palma da sua mão ficar dando Full vermelho! tenha a famosa sensi que 
+                                  ﻿﻿﻿﻿﻿gruda! Ganhe todos x1, Rank, CS Rank, 100% disfaçado nos Apostados,
+                            tudo isso usando o melhor Xit com segurança e 100% Anti-ban Anti-BlackList</p>
+                    </div>
+                </div>
+            </div>
 
-  <!-- Pacotes VIP -->
-  <section class="pacotes" id="pacotes">
-    <h2>Escolha seu pacote VIP</h2>
+            <div class="col-11 col-lg-3 mt-3">
+                <div class="card p-3 rounded-4">
+                    <img src="imgs/controle.png" class="card-img-top" alt="Controle - Jogabilidade">
+                    <div class="card-body border-4">
+                        <h5 class="card-title">Jogabilidade Profissional</h5>
+                        <p class="card-text">Transforme sua jogabilidade com comandos precisos e Respostas rápidas
+                            do Painel com zero delay Aproveite Agora o Melhor.</p>
+                    </div>
+                </div>
+            </div>
 
-    <!-- Pacote iOS -->
-    <div class="pacote">
-      <img src="img site/iphone.png" alt="Painel CLT VIP" />
-      <h3>XIT iPhone/iOS</h3>
-      <p>Melhor XIT para seu iPhone, 100% full capa, anti-ban, com funções avançadas.</p>
-         </p>
-        <hr style="border-color: #00ff00;">
-         <ul class="lista-beneficios mb-4" style="list-style: none; padding-left: 0; text-align: left;">
-            <li> <i class="bi bi-check-circle-fill star-green"></i> Função HS pescoço + Bypass</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> Mira automática 100% capa</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> 2x Automática</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> Rastreamento de cabeça</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> Aimbot Cabeça</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> UMP AUTOMÁTICA</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> Disfarce anti-ban</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> Sensi VIP Full capa</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> Aim Regedit</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> 2x Aimbot</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> HeadShot</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> Mira que grudar</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> VPN-DNS</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> Instalação fácil e rápida</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> 100% ANTI-BAN!</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> 100% ANTI-BLACKLIST!</li>
-        </ul>
-      <div class="preco">
-        <h3>De R$ 179,97</h3>
-        <h4>Por Apenas R$37,90</h4>
-      </div>
-      <a href="https://go.pepperpay.com.br/1xm07" class="btn btn-pulse-green btn-comprar">COMPRAR AGORA!</a>
-    </div>
+            <div class="col-11 col-lg-3 mt-3">
+                <div class="card p-3 rounded-4">
+                    <img src="imgs/velocimetro.png" class="card-img-top" alt="Velocímetro - Desempenho">
+                    <div class="card-body">
+                        <strong> <h5 class="card-title">Desempenho Turbinado!</h5></strong> 
+                        <p class="card-text">Tenha resposta rápida e performance máxima Nos dispositivos Android e iPhone/iOS.</p>
+                    </div>
+                </div>
+            </div>
 
-    <!-- Pacote Android -->
-    <div class="pacote">
-      <img src="img site/android.png" alt="Painel Android" />
-      <h3>XIT Android</h3>
-      <p>Melhor XIT para Android, full capa, anti-ban, funções exclusivas para seu dispositivo.</p>
-       </p>
-        <hr style="border-color: #00ff00;">
-         <ul class="lista-beneficios mb-4" style="list-style: none; padding-left: 0; text-align: left;">
-            <li> <i class="bi bi-check-circle-fill star-green"></i> Função HS pescoço + Bypass</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> Mira automática 100% capa</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> 2x Automática</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> Rastreamento de cabeça</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> Aimbot Cabeça</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> UMP AUTOMÁTICA</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> Disfarce anti-ban</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> Sensi VIP Full capa</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> Aim Regedit</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> 2x Aimbot</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> HeadShot</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> Mira que grudar</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> VPN-DNS</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> Instalação fácil e rápida</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> 100% ANTI-BAN!</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> 100% ANTI-BLACKLIST!</li>
-        </ul>
-      <div class="preco">
-        <h3>De R$ 147,97</h3>
-        <h4>Por Apenas R$29,90</h4>
-      </div>
-      <a href="https://go.pepperpay.com.br/6ztdj" class="btn btn-pulse-green btn-comprar">COMPRAR AGORA!</a>
+        </div>
     </div>
-
-    <!-- Pacote VIP completo -->
-    <div class="pacote" id="planos">
-      <img src="img site/ambos.png" alt="Painel CLT VIP" />
-      <h3>PACOTE VIP 2 EM 1 AVANÇADO</h3>
-      <p>Painel VIP 2 em 1 com ferramentas secretas, com segurança e suporte 24/7.</p>
-        <hr style="border-color: #00ff00;">
-        <ul class="lista-beneficios mb-4" style="list-style: none; padding-left: 0; text-align: left;">
-            <li><i class="bi bi-check-circle-fill star-green"></i> Painel VIP exclusivo Android/iPhone</li>
-            <li><i class="bi bi-check-circle-fill star-green"></i> Rastreamento de cabeça</li><li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> Mira Regular pra Cabeça Pescoço peito</li>
-            <li><i class="bi bi-check-circle-fill star-green"></i> Mira automática Full capa</li>
-            <li><i class="bi bi-check-circle-fill star-green"></i> Rastreamento com mira aberta</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> 2x Automática</li>
-            <li><i class="bi bi-check-circle-fill star-green"></i> UMP automática</li>
-            <li><i class="bi bi-check-circle-fill star-green"></i> 2x Aimbot</li>
-            <li><i class="bi bi-check-circle-fill star-green"></i> Painel 100% disfarçado</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> Disfarce 100% Anti ban</li>
-            <li><i class="bi bi-check-circle-fill star-green"></i> Aim Regedit</li>
-            <li><i class="bi bi-check-circle-fill star-green"></i> Aim Lock</li>
-            <li><i class="bi bi-check-circle-fill star-green"></i> HeadShot</li>
-            <li><i class="bi bi-check-circle-fill star-green"></i> No Recoil (não espalha tiro)</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> Sensi VIP Full Capa</li>
-            <li><i class="bi bi-check-circle-fill star-green"></i> Mira que Grudar</li>
-            <li><i class="bi bi-check-circle-fill star-green"></i> Instalação fácil e rápida</li>
-            <li><i class="bi bi-check-circle-fill star-green"></i> 100% ANTI-BAN e ANTI-BLACK LIST</li>
-            <li><i class="bi bi-check-circle-fill star-green"></i> BÔNUS: Acesso todas ferramentas secretas</li>
-            <li><i class="bi bi-check-circle-fill star-green"></i> Suporte 24/7 pessoal no WhatsApp</li>
-        </ul>
-      <div class="preco">
-        <h3>De R$ 249,97</h3>
-        <h4>Por Apenas R$49,90</h4>
-      </div>
-      <a href="https://go.pepperpay.com.br/st7xa" class="btn btn-pulse-green btn-comprar">COMPRAR AGORA!</a>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
-  </section>
+</div
  </div>
 
     <div class="text-center p-3 mt-2">
-       <h1 class="display-2 text-light"> 
+        <h1 class="display-2 text-light"> 
+             Veja abaixo alguns
             <span class="neon-red">
-                FeedBacks clientes
+                FeedBacks de clientes
             </span>
         </h1>
     </div>
+
+
+
 
     <div id="carouselDepoimentos" class="carousel slide container py-5" data-bs-ride="carousel">
         <div class="carousel-inner">
@@ -702,7 +436,7 @@
                 <div class="d-flex justify-content-center">
                     <div class="card text-white text-center p-4 rounded-4"
                         style="background-color: #121212; width: 90%; max-width: 400px;">
-                        <img src="img site/pvsocial (1).webp" alt="Depoimento 1" class="img-fluid">
+                        <img src="imgs/pvsocial (1).jpg" alt="Depoimento 1" class="img-fluid">
                         <div class="mb-2 mt-2">
                             <i class="bi bi-star-fill star-green"></i>
                             <i class="bi bi-star-fill star-green"></i>
@@ -718,7 +452,7 @@
                 <div class="d-flex justify-content-center">
                     <div class="card text-white text-center p-4 rounded-4"
                         style="background-color: #121212; width: 90%; max-width: 400px;">
-                        <img src="img site/pvsocial (2).webp" alt="Depoimento 2" class="img-fluid">
+                        <img src="imgs/pvsocial (2).jpg" alt="Depoimento 2" class="img-fluid">
                         <div class="mb-2 mt-2">
                             <i class="bi bi-star-fill star-green"></i>
                             <i class="bi bi-star-fill star-green"></i>
@@ -734,7 +468,7 @@
                 <div class="d-flex justify-content-center">
                     <div class="card text-white text-center p-4 rounded-4"
                         style="background-color: #121212; width: 90%; max-width: 400px;">
-                        <img src="img site/pvsocial (3).webp" alt="Depoimento 3" class="img-fluid">
+                        <img src="imgs/pvsocial (3).jpg" alt="Depoimento 3" class="img-fluid">
                         <div class="mb-2 mt-2">
                             <i class="bi bi-star-fill star-green"></i>
                             <i class="bi bi-star-fill star-green"></i>
@@ -750,7 +484,7 @@
                 <div class="d-flex justify-content-center">
                     <div class="card text-white text-center p-4 rounded-4"
                         style="background-color: #121212; width: 90%; max-width: 400px;">
-                        <img src="img site/pvsocial (4).webp" alt="Depoimento 3" class="img-fluid">
+                        <img src="imgs/pvsocial (4).jpg" alt="Depoimento 3" class="img-fluid">
                         <div class="mb-2 mt-2">
                             <i class="bi bi-star-fill star-green"></i>
                             <i class="bi bi-star-fill star-green"></i>
@@ -766,7 +500,7 @@
                 <div class="d-flex justify-content-center">
                     <div class="card text-white text-center p-4 rounded-4"
                         style="background-color: #121212; width: 90%; max-width: 400px;">
-                        <img src="img site/pvsocial (5).webp" alt="Depoimento 3" class="img-fluid">
+                        <img src="imgs/pvsocial (5).jpg" alt="Depoimento 3" class="img-fluid">
                         <div class="mb-2 mt-2">
                             <i class="bi bi-star-fill star-green"></i>
                             <i class="bi bi-star-fill star-green"></i>
@@ -782,7 +516,7 @@
                 <div class="d-flex justify-content-center">
                     <div class="card text-white text-center p-4 rounded-4"
                         style="background-color: #121212; width: 90%; max-width: 400px;">
-                        <img src="img site/pvsocial (6).webp" alt="Depoimento 3" class="img-fluid">
+                        <img src="imgs/pvsocial (6).jpg" alt="Depoimento 3" class="img-fluid">
                         <div class="mb-2 mt-2">
                             <i class="bi bi-star-fill star-green"></i>
                             <i class="bi bi-star-fill star-green"></i>
@@ -806,139 +540,357 @@
             <span class="visually-hidden">Próximo</span>
         </button>
        </div>
-  <!-- Garantia -->
-  <section class="py-5 bg-dark text-center text-white">
-    <div class="container">
-      <img src="img site/garantia.webp" alt="Garantia" class="img-fluid mb-3" style="max-width: 200px;" />
-      <h4 class="mb-3">Garantia de Satisfação</h4>
-      <p>Você tem 7 dias de garantia para testar tudo sem compromisso. Se não ficar satisfeito, seu dinheiro de volta!</p>
+    <div class="text-center my-5">
+        <h1 class="display-2  text-light">
+            <span class="white-bold">Escolha seu pacote <span class="neon-red">VIP</span><br>
+                acesso único<span class="neon-red"> LOGO Abaixo</span><br><br>
+        </h1>
+    <div class="card pacote-card p-4 rounded-4 shadow-lg text-white mx-auto"
+        style="max-width: 350px; background-color: #121212;">
+        <div class="col-12 col-lg-6 mb-4 fade-in">
+            
+        </div>
+        <div class="col-12 col-lg-6 mb-4 fade-in">
+            <img src="imgs/iphone.png" class="img-fluid rounded w-50" alt="Painel CLT VIP" />
+        </div>
+
+      <h1 class="mb-3 white-bold text-center text-align" style="font-size: 2.0rem; color: #00cc00;">
+        <span class="neon-vermelho"> xit </span>   <span class="neon-red">IPHONE/iOS</span><br>
+        </h1>
+
+        <p class="mb-3 white-bold" style="font-size: 0.8rem;">
+            Melhor <span class="neon-vermelho">XIT</span> para seu iPhone 100% full capa
+        </p>
+        <hr style="border-color: #00ff00;">
+         <ul class="lista-beneficios mb-4" style="list-style: none; padding-left: 0; text-align: left;">
+            <li> <i class="bi bi-check-circle-fill star-green"></i> Função HS pescoço + Bypass</li>
+            <li> <i class="bi bi-check-circle-fill star-green"></i> Mira automática 100% capa</li>
+            <li> <i class="bi bi-check-circle-fill star-green"></i> 2x Automática</li>
+            <li> <i class="bi bi-check-circle-fill star-green"></i> Rastreamento de cabeça</li>
+            <li> <i class="bi bi-check-circle-fill star-green"></i> Aimbot Cabeça</li>
+            <li> <i class="bi bi-check-circle-fill star-green"></i> UMP AUTOMÁTICA</li>
+            <li> <i class="bi bi-check-circle-fill star-green"></i> Disfarce anti-ban</li>
+            <li> <i class="bi bi-check-circle-fill star-green"></i> Sensi VIP Full capa</li>
+            <li> <i class="bi bi-check-circle-fill star-green"></i> Aim Regedit</li>
+            <li> <i class="bi bi-check-circle-fill star-green"></i> 2x Aimbot</li>
+            <li> <i class="bi bi-check-circle-fill star-green"></i> HeadShot</li>
+            <li> <i class="bi bi-check-circle-fill star-green"></i> Mira que grudar</li>
+            <li> <i class="bi bi-check-circle-fill star-green"></i> VPN-DNS</li>
+            <li> <i class="bi bi-check-circle-fill star-green"></i> Instalação fácil e rápida</li>
+            <li> <i class="bi bi-check-circle-fill star-green"></i> 100% ANTI-BAN!</li>
+            <li> <i class="bi bi-check-circle-fill star-green"></i> 100% ANTI-BLACKLIST!</li>
+            <li> <i class="bi bi-check-circle-fill star-green"></i> Suporte 24/7 no WhatsApp</li>
+        </ul>
+        <div class="preco text-center mb-4">
+            <h3 class="fs-6 text-decoration-line-through mb-1"
+                style="color: red !important; font-size: 30px !important;">De R$ 149,97</p>
+                <h4 class="neon-red fw-bold mb-2">Por Apenas R$29,90</h4>
+        </div>
+        <a href="https://go.pepperpay.com.br/1xm07"
+            class="btn btn-pulse-green fw-bold px-4 py-2"> COMPRAR AGORA!
+                </a>
+        <p class="fs-6 mt-3"> 
+     </div>
+    <div class="card pacote-card p-4 rounded-4 shadow-lg text-white mx-auto mt-5"
+        style="max-width: 350px; background-color: #121212;">
+        <div class="col-12 col-lg-6 mb-4 fade-in">
+            
+        </div>
+
+        <div class="col-12 col-lg-6 mb-4 fade-in">
+            <img src="imgs/android.png" class="img-fluid rounded w-50" alt="Painel CLT VIP" />
+        </div>
+
+      <h1 class="mb-3 white-bold text-center text-align" style="font-size: 2.0rem; color: #00cc00;">
+        <span class="neon-vermelho"> xit </span>   <span class="neon-red">ANDROID</span><br>
+        </h1>
+
+        <p class="mb-3 white-bold" style="font-size: 0.8rem;">
+            Melhor <span class="neon-vermelho">XIT</span> para seu ANDROID 100% full capa
+        </p>
+        <hr style="border-color: #00ff00;">
+         <ul class="lista-beneficios mb-4" style="list-style: none; padding-left: 0; text-align: left;">
+            <li> <i class="bi bi-check-circle-fill star-green"></i> Função HS pescoço + Bypass</li>
+            <li> <i class="bi bi-check-circle-fill star-green"></i> Mira automática 100% capa</li>
+            <li> <i class="bi bi-check-circle-fill star-green"></i> 2x Automática</li>
+            <li> <i class="bi bi-check-circle-fill star-green"></i> Rastreamento de cabeça</li>
+            <li> <i class="bi bi-check-circle-fill star-green"></i> Aimbot Cabeça</li>
+            <li> <i class="bi bi-check-circle-fill star-green"></i> UMP AUTOMÁTICA</li>
+            <li> <i class="bi bi-check-circle-fill star-green"></i> Disfarce anti-ban</li>
+            <li> <i class="bi bi-check-circle-fill star-green"></i> Sensi VIP Full capa</li>
+            <li> <i class="bi bi-check-circle-fill star-green"></i> Aim Regedit</li>
+            <li> <i class="bi bi-check-circle-fill star-green"></i> 2x Aimbot</li>
+            <li> <i class="bi bi-check-circle-fill star-green"></i> HeadShot</li>
+            <li> <i class="bi bi-check-circle-fill star-green"></i> Mira que grudar</li>
+            <li> <i class="bi bi-check-circle-fill star-green"></i> VPN-DNS</li>
+            <li> <i class="bi bi-check-circle-fill star-green"></i> Instalação fácil e rápida</li>
+            <li> <i class="bi bi-check-circle-fill star-green"></i> 100% ANTI-BAN!</li>
+            <li> <i class="bi bi-check-circle-fill star-green"></i> 100% ANTI-BLACKLIST!</li>
+            <li> <i class="bi bi-check-circle-fill star-green"></i> Suporte 24/7 no WhatsApp</li>
+        </ul>
+        <div class="preco text-center mb-4">
+            <h3 class="fs-6 text-decoration-line-through mb-1"
+                style="color: red !important; font-size: 30px !important;">De R$ 149,97</p>
+                <h4 class="neon-red fw-bold mb-2">Por Apenas R$29,90</h4>
+        </div>
+        <a href="https://go.pepperpay.com.br/6ztdj"
+            class="btn btn-pulse-green fw-bold px-4 py-2">
+            COMPRAR AGORA!
+      </a>
+
     </div>
-  </section>
 
-  <!-- FAQ -->
-  <section id="faq" class="py-5">
-    <div class="container">
-      <h2>Perguntas Frequentes (FAQ)</h2>
-      <div class="accordion" id="faqAccordion">
-        <!-- Pergunta 1 -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="faq1">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
-              PARA QUEM É ESSE PRODUTO?
-            </button>
-          </h2>
-          <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="faq1" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              Público-alvo: jogadores de Free Fire que querem melhorar suas sensi e que te uma mira que gruda Full vermelho sempre! com segurança e 100% Anti-ban.
-            </div>
-          </div>
+    <div class="card pacote-card p-4 rounded-4 shadow-lg text-white mx-auto mt-5" id="planos"
+        style="max-width: 350px; background-color: #121212;">
+        <div class="col-12 col-lg-6 mb-4 fade-in">
+          
         </div>
-        <!-- Pergunta 3 -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="faq3">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-              COMO RECEBO MEU PRODUTO?
-            </button>
-          </h2>
-          <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="faq3" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              Após confirmação de pagamento, você receberá por e-mail rápido na hora! um link com acesso ao produto. Pagou, recebeu! simples e fácil, sem enrolaçâo.
-            </div>
-          </div>
+
+   <div class="text-center">
+            <h1 class="display-2 text-light">
+                PACOTE VIP MAIS COMPLETO </span></div>
+        <div class="col-12 col-lg-6 fade-in">
+            <img src="imgs/CLT.jpg" class="img-fluid rounded w-60" alt="Painel CLT VIP" />
+       </span> </div>
+
+        <div class="text-center">
+            <h1 class="display-2 text-light">
+                Painel CLT <span class="neon-red">VIP</span>
+            </h1>
         </div>
-        <!-- Pergunta 4 -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="faq4">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-              COMO ACESSAR O PRODUTO?
-            </button>
-          </h2>
-          <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="faq4" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              Você acessa pelo seu e-mail ou pelo o link do seu E-mail, fazendo login e indo em  minutos ao produto.
-            </div>
-          </div>
+
+        <div id="notificacoes" style="position: fixed; bottom: 20px; left: 20px; z-index: 9999;"></div>
+
+
+
+        <p class="mb-3 white-bold text-center" style="font-size: 0.8rem;">
+            Melhor Painel CLT para Android e iPhone/iOS
+        </p>
+        <hr style="border-color: #00ff00;">
+        <ul class="lista-beneficios mb-4" style="list-style: none; padding-left: 0; text-align: left;">
+            <li><i class="bi bi-check-circle-fill star-green"></i> Painel VIP exclusivo Android/iPhone</li>
+            <li><i class="bi bi-check-circle-fill star-green"></i> Rastreamento de cabeça</li><li>
+            <li> <i class="bi bi-check-circle-fill star-green"></i> Mira Regular pra Cabeça Pescoço peito</li>
+            <li><i class="bi bi-check-circle-fill star-green"></i> Mira automática Full capa</li>
+            <li><i class="bi bi-check-circle-fill star-green"></i> Rastreamento com mira aberta</li>
+            <li> <i class="bi bi-check-circle-fill star-green"></i> 2x Automática</li>
+            <li><i class="bi bi-check-circle-fill star-green"></i> UMP automática</li>
+            <li><i class="bi bi-check-circle-fill star-green"></i> 2x Aimbot</li>
+            <li><i class="bi bi-check-circle-fill star-green"></i> Painel disfarçado de carteira de trabalho</li>
+            <li> <i class="bi bi-check-circle-fill star-green"></i> Disfarce 100% Anti ban</li>
+            <li><i class="bi bi-check-circle-fill star-green"></i> Aim Regedit</li>
+            <li><i class="bi bi-check-circle-fill star-green"></i> Aim Lock</li>
+            <li><i class="bi bi-check-circle-fill star-green"></i> HeadShot</li>
+            <li><i class="bi bi-check-circle-fill star-green"></i> No Recoil (não espalha tiro)</li>
+            <li> <i class="bi bi-check-circle-fill star-green"></i> Sensi VIP Full Capa</li>
+            <li><i class="bi bi-check-circle-fill star-green"></i> Mira que Grudar</li>
+            <li><i class="bi bi-check-circle-fill star-green"></i> Instalação fácil e rápida</li>
+            <li><i class="bi bi-check-circle-fill star-green"></i> 100% ANTI-BAN e ANTI-BLACK LIST</li>
+            <li><i class="bi bi-check-circle-fill star-green"></i> BÔNUS: Acesso todas ferramentas secretas</li>
+            <li><i class="bi bi-check-circle-fill star-green"></i> Suporte 24/7 pessoal no WhatsApp</li>
+        </ul>
+        <div class="preco text-center mb-4">
+            <h3 class="fs-6 text-decoration-line-through mb-1"
+                style="color: red !important; font-size: 30px !important;">De R$ 214,97</p>
+                <h4 class="neon-red fw-bold mb-2">Por Apenas R$49,90</h4>
         </div>
-        <!-- Pergunta 5 -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="faq5">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
-              COMO INSTALAR E FÁCIL ?
-            </button>
-          </h2>
-          <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="faq5" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-               <span class="white-bold">A instalação é rápida e fácil: em poucos minutos, com instruções passo a passo video tutorial completo e suporte no WhatsApp. ganhe Suporte 24/7!</span>
-            </div>
-          </div>
+        <a href="https://go.pepperpay.com.br/n9oz4"
+            class="btn btn-pulse-green fw-bold px-4 py-2">
+            COMPRAR AGORA! 
+        </span>
+                    </a>
+        
         </div>
-      </div>
+    
+    <div class="container py-5">
+        <div class="row align-items-center justify-content-center text-white text-center">
+            <div class="col-12 col-md-4 mb-4">
+                <img src="imgs/garantia.webp" alt="Garantia" class="img-fluid" style="max-width: 200px;">
+            </div>
+            <div class="col-12 col-md-6">
+                <h4 class="mb-3">Garantia de Satisfação</h4>
+                <p class="fs-5">
+                    Você tem <strong>7 dias de garantia</strong> para testar tudo sem compromisso. se não ficar satisfeito
+                    Seu dinheiro de volta sem perguntas até 7 dias após a compra. <br><br>
+                </p>
+            </div>
+        </div>
     </div>
-  </section>
 
-  <!-- Rodapé -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2023-2025 New Sensi. Todos os direitos reservados.</p>
-      <p>Instagram Oficial: <a href="https://instagram.com/new.sensi.ff" target="_blank" style="color:#00e676;">@new.sensi.ff</a></p>
-      <p>Desenvolvido por <strong>New sensi</strong></p>
-    </div>
-  </footer>
 
-  <!-- Script de notificações e contagem -->
-  <div id="notificacoes"></div>
+    <div class="container py-5" id="faq">
+        <h2 class="text-center mb-4 neon-red" style="font-family: 'Bebas Neue', cursive;">Perguntas Frequentes (FAQ)
+        </h2>
+        <div class="accordion accordion-flush" id="faqAccordion">
 
-  <script>
-    // Contador de usuários
-    let contador = 138;
-    const elementoContador = document.getElementById('contador-pessoas');
+            <!-- PERGUNTA 1 -->
+            <div class="accordion-item" style="background-color: #121212; color: white;">
+                <h2 class="accordion-header" id="faq1">
+                    <button class="accordion-button collapsed bg-dark text-white" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="false"
+                        aria-controls="faqCollapse1">
+                        PARA QUEM É ESSE PRODUTO?
+                    </button>
+                </h2>
+                <div id="faqCollapse1" class="accordion-collapse collapse" aria-labelledby="faq1"
+                    data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Público-alvo: jogadores de Free Fire. <br><br>
+                    </div>
+                </div>
+            </div>
 
-    function atualizarContador() {
-      const aumento = Math.floor(Math.random() * 5) + 1;
-      contador += aumento;
-      elementoContador.textContent = contador;
-      setTimeout(atualizarContador, Math.floor(Math.random() * 3000) + 2000);
-    }
-    atualizarContador();
+            <!-- PERGUNTA 2 -->
+            <div class="accordion-item" style="background-color: #121212; color: white;">
+                <h2 class="accordion-header" id="faq2">
+                    <button class="accordion-button collapsed bg-dark text-white" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false"
+                        aria-controls="faqCollapse2">
+                        COMO FUNCIONA O PRAZO DE GARANTIA?
+                    </button>
+                </h2>
+                <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faq2"
+                    data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Você tem até <strong>7 dias de Garantia</strong> para pedir o reembolso integral se não ficar
+                        satisfeito com o produto.
+                    </div>
+                </div>
+            </div>
 
-    // Notificações dinâmicas
-    const nomes = ["João", "Isabelle", "Maria", "Ana", "Matheus", "Juliana", "Rafaela", "Pedro", "Carlos", "Lucas"];
-    const acoes = [
-      "Aproveitou a Promoção",
-      "Comprou Painel Xit",
-      "Acabou de adquirir o painel CLT",
-      "Realizou uma compra",
-      "Confirmou o pagamento"
-    ];
+            <!-- PERGUNTA 3 -->
+            <div class="accordion-item" style="background-color: #121212; color: white;">
+                <h2 class="accordion-header" id="faq3">
+                    <button class="accordion-button collapsed bg-dark text-white" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false"
+                        aria-controls="faqCollapse3">
+                        COMO VOU RECEBER O MEU PRODUTO?
+                    </button>
+                </h2>
+                <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faq3"
+                    data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Assim que o pagamento for confirmado, você receberá automaticamente por e-mail (Gmail).
+                        <br><strong>Pagou, recebeu!</strong>
+                    </div>
+                </div>
+            </div>
 
-    function mostrarNotificacao() {
-      const nome = nomes[Math.floor(Math.random() * nomes.length)];
-      const acao = acoes[Math.floor(Math.random() * acoes.length)];
-      const mensagem = `${nome} ${acao}`;
+            <!-- PERGUNTA 4 -->
+            <div class="accordion-item" style="background-color: #121212; color: white;">
+                <h2 class="accordion-header" id="faq4">
+                    <button class="accordion-button collapsed bg-dark text-white" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#faqCollapse4" aria-expanded="false"
+                        aria-controls="faqCollapse4">
+                        COMO ACESSAR O PRODUTO?
+                    </button>
+                </h2>
+                <div id="faqCollapse4" class="accordion-collapse collapse" aria-labelledby="faq4"
+                    data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Você receberá acesso por e-mail. Também pode acessar pelo site oficial da plataforma:
+                        <ol class="mt-2">
+                            <li>Faça login na plataforma clicando em <strong>'Entrar'</strong></li>
+                            <li>No menu lateral, clique em <strong>'Minha conta'</strong></li>
+                            <li>Depois em <strong>'Minhas compras'</strong> — lá estarão todos os seus produtos!</li>
+                    </div>
+                </div>
+            </div>
 
-      const divNotificacao = document.createElement('div');
-      divNotificacao.className = 'notificacao';
-      divNotificacao.innerHTML = `<i class="bi bi-check-circle" style="margin-right:8px;"></i> ${mensagem}`;
+ <!-- PERGUNTA 5 -->
+            <div class="accordion-item" style="background-color: #121212; color: white;">
+                <h2 class="accordion-header" id="faq5">
+                    <button class="accordion-button collapsed bg-dark text-white" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#faqCollapse5" aria-expanded="false"
+                        aria-controls="faqCollapse5">
+                        ENSINAM COMO INSTALAR?
+                    </button>
+                </h2>
+                <div id="faqCollapse5" class="accordion-collapse collapse" aria-labelledby="faq5"
+                    data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        A instalação é super simples! Após a compra, você receberá um link de <strong>download</strong></li> e instruções passo a
+                        passo. O processo leva menos de <strong>5 minutos</strong></li> e funciona em qualquer dispositivo.<br>
+                        e para qualquer dúvida que seja estarei a disposição para ajudar<br> 
+                        Ao adquirir o produto vc receber na hora um suporte especial no zap e instagram.<br>
+                        Atendimento especializado <strong>exclusivo</strong></li> para <strong>clientes</strong></li> disponível 24 horas por dia<br> 
+                        para tender qualquer necessidade.<br>  <strong>suporte especial pra auxilia na instalação</strong></li>
+                    </div>
+                </div>
+            </div>
 
-      document.getElementById('notificacoes').appendChild(divNotificacao);
+    <!-- Footer -->
+    <footer class="footer text-center mt-5">
+        <div class="container">
+            <p class="mb-2" style="font-size: 12px;">&copy;2023-2025 New sensi Todos os direitos reservados.</p>
+            <p class="mb-2" style="font-size: 12px;">&copy; Instagram Oficial @new.sensi.ff</p>
+            <p class="mb-0">Developed by <strong>Nevy</strong></p>
+        </div>
+    </footer>
 
-      setTimeout(() => {
-        divNotificacao.remove();
-      }, 5000);
-    }
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '3525977697696631');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=3525977697696631&ev=PageView&noscript=1" />
+    </noscript>
+    <!-- End Meta Pixel Code -->
 
-    function loopNotificacoes() {
-      mostrarNotificacao();
-      const tempo = Math.floor(Math.random() * 7000) + 8000;
-      setTimeout(loopNotificacoes, tempo);
-    }
+    <script>
+        const nomes = ["João", "isabelle", "Maria", "Ana", "Matheus", "Juliana", "Rafaela", "Pedro", "Carlos", "Lucas", ];
+        const acoes = [
+            "Aproveitou a Promoção",
+            "Comprou Painel xit",
+            "Acabou de adquirir o painel CLT",
+            "Realizou uma compra",
+            "Confirmou o pagamento",
+        ];
 
-    window.onload = () => {
-      loopNotificacoes();
-    };
-  </script>
+        function mostrarNotificacao() {
+            const nome = nomes[Math.floor(Math.random() * nomes.length)];
+            const acao = acoes[Math.floor(Math.random() * acoes.length)];
+            const mensagem = `${nome} ${acao}`;
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+            const notificacao = document.createElement("div");
+            notificacao.className = "notificacao";
+            notificacao.innerHTML = `<i class="bi bi-check-circle" style="margin-right: 8px;"></i> ${mensagem}`;
+
+            document.getElementById("notificacoes").appendChild(notificacao);
+
+            setTimeout(() => {
+                notificacao.remove();
+            }, 5000);
+        }
+
+        function loopNotificacoes() {
+            mostrarNotificacao();
+            const tempo = Math.floor(Math.random() * 7000) + 8000;
+            setTimeout(loopNotificacoes, tempo);
+        }
+
+        window.onload = loopNotificacoes;
+    </script>
+
+
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
+
