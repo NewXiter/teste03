@@ -30,7 +30,74 @@
       font-family: 'Poppins', sans-serif;
       line-height: 1.6;
     }
+   }
 
+    h1, h2, h3 { font-family: 'Bebas Neue', sans-serif; }
+
+    .container { padding-left: 15px; padding-right: 15px; }
+
+    /* Hero */
+    .hero {
+      padding: 60px 15px;
+      text-align: center;
+      background: radial-gradient(circle at top left, rgba(0,230,118,.15), transparent 40%), 
+                  radial-gradient(circle at bottom right, rgba(0,0,0,.25), transparent 40%);
+    }
+    .hero img { max-width: 90px; margin-bottom: 16px; }
+
+    .tagline { font-size: 1.9rem; line-height: 1.15; margin-bottom: 8px; }
+    .neon {
+      color: #1ee08c;
+      text-shadow: 0 0 6px rgba(30,224,140,.8);
+    }
+
+    .btn-custom {
+      background-color: #000;
+      color: #fff;
+      border: 2px solid #00e676;
+      font-weight: 600;
+      padding: .75rem 1.25rem;
+    }
+    .btn-custom:hover { background-color: #00e676; color: #000; }
+
+    .card {
+      background-color: var(--card);
+      color: #fff;
+      border: 1px solid #222;
+      border-radius: 1rem;
+    }
+    .card-img-top { border-radius: 1rem 1rem 0 0; object-fit: cover; }
+
+    .badge-accent {
+      background-color: #00e676; color: #000; font-weight: 700;
+    }
+
+    <style>
+        body {
+            background-color: #000;
+            color: white;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        h1 {
+            font-family: 'Bebas Neue', sans-serif;
+        }
+
+        .hero {
+            padding: 50px 15px;
+        }
+
+        .hero img {
+            max-width: 120px;
+            margin-bottom: 20px;
+        }
+
+        .neon-red {
+            color: #1cf300;
+            text-shadow: 0 0 5px #2bff00, 0 0 10px #005103, 0 0 20px #000000;
+        }
+    
     /* Cabeçalho banner */
     #banner-cupom {
       background-color: #222;
@@ -156,105 +223,12 @@
 
         .pacote-card ul.lista-beneficios li {
             margin-bottom: 6px;
+              }
+     .accordion-body strong {
+            color: #00ff00;
         }
+    </style>
 
-        .pacote-card .neon-red {
-            color: #1cf300;
-            text-shadow: 0 0 5px #2bff00, 0 0 10px #005103, 0 0 20px #000000;
-        }
-
-        .pacote-card {
-            background-color: #000000;
-            color: #fff;
-            border: 2px solid #00ff00;
-            transition: background-color 0.3s ease;
-        }
-
-        .pacote-card .btn-custom:hover {
-            background-color: #00cc00;
-            color: white;
-            border: 2px solid #00ff00;
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.7);
-            }
-
-            70% {
-                transform: scale(1.1);
-                box-shadow: 0 0 20px 10px rgba(0, 255, 0, 0);
-            }
-
-            100% {
-                transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(0, 255, 0, 0);
-            }
-        }
-
-        .btn-pulse-green {
-            background-color: #00cc00;
-            color: white;
-            border: 2px solid #00ff00;
-            animation: pulse 1.6s infinite;
-            transition: all 0.3s ease;
-            border-radius: 8px;
-        }
-
-        .btn-pulse-green:hover {
-            background-color: #00ff00;
-            color: #000;
-            transform: scale(1.1);
-        }
-
-        #faq {
-            background-color: #0a0a0a;
-            color: white;
-            border-radius: 16px;
-            box-shadow: 0 0 20px rgba(0, 255, 0, 0.1);
-        }
-
-        #faq h2 {
-            font-size: 2.2rem;
-            text-shadow: 0 0 6px #00ff00, 0 0 10px #005103;
-        }
-
-        .accordion-item {
-            border: 1px solid #00ff00;
-            margin-bottom: 10px;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .accordion-button {
-            font-weight: bold;
-            background-color: #1a1a1a;
-            color: #fff;
-            border: none;
-            box-shadow: none;
-            transition: background-color 0.3s ease;
-        }
-
-        .accordion-button:hover {
-            background-color: #00cc00;
-            color: #000;
-        }
-
-        .accordion-button:not(.collapsed) {
-            background-color: #00ff00;
-            color: #000;
-        }
-
-        .accordion-body {
-            background-color: #121212;
-            padding: 20px;
-            font-size: 0.95rem;
-        }
-
-        .accordion-body ol {
-            padding-left: 1.2rem;
-        }
     /* Hero section */
     .hero {
       padding: 60px 20px;
@@ -534,7 +508,7 @@
 
   <!-- Banner com cupom -->
   <div id="banner-cupom">
-    <strong>USE CUPOM [XITEI] GANHE 1 DESCONTO!</strong>
+    <strong>USE CUPOM [XITEI] GANHE 2 DESCONTO!</strong>
   </div>
 
   <!-- Hero -->
