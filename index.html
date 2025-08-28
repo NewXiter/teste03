@@ -230,6 +230,50 @@
             margin-bottom: 6px;
         }
 
+        .pacote-card .btn-custom:hover {
+            background-color: #00cc00;
+            color: white;
+            border: 2px solid #00ff00;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.7);
+            }
+
+            70% {
+                transform: scale(1.1);
+                box-shadow: 0 0 20px 10px rgba(0, 255, 0, 0);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(0, 255, 0, 0);
+            }
+        }
+
+        .btn-pulse-green {
+            background-color: #00cc00;
+            color: white;
+            border: 2px solid #00ff00;
+            animation: pulse 1.6s infinite;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+        }
+
+        .btn-pulse-green:hover {
+            background-color: #00ff00;
+            color: #000;
+            transform: scale(1.1);
+        }
+
+        #faq {
+            background-color: #0a0a0a;
+            color: white;
+            border-radius: 16px;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.1);
+        }
         .pacote-card .neon-red {
             color: #1cf300;
             text-shadow: 0 0 5px #2bff00, 0 0 10px #005103, 0 0 20px #000000;
@@ -667,7 +711,7 @@
 
   <!-- Banner com cupom -->
   <div id="banner-cupom">
-    <strong>USE CUPOM [XITEI] GANHE 14 DESCONTO!</strong>
+    <strong>USE CUPOM [XITEI] GANHE 15 DESCONTO!</strong>
   </div>
 
   <!-- Hero -->
