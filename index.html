@@ -19,14 +19,16 @@
       --text: #e9f1f5;
       --accent: #00e676;
       --muted: #a9a9a9;
-   }
+    }
 
-    * { box-sizing: border-box; }
+    /* Reset básico */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
       background-color: var(--bg);
       color: var(--text);
       font-family: 'Poppins', sans-serif;
-      margin: 0;
+      line-height: 1.6;
     }
 
     /* Cabeçalho banner */
@@ -51,62 +53,34 @@
       font-size: 1.2rem;
     }
 
-     /* Hero */
+    /* Hero section */
     .hero {
-      padding: 60px 15px;
+      padding: 60px 20px;
       text-align: center;
       background: radial-gradient(circle at top left, rgba(0,230,118,.15), transparent 40%), 
                   radial-gradient(circle at bottom right, rgba(0,0,0,.25), transparent 40%);
-      }
-    .hero img { max-width: 90px; margin-bottom: 16px; }
-
-    .tagline { font-size: 1.9rem; line-height: 1.15; margin-bottom: 8px; }
-    .neon {
+    }
+    .hero img {
+      max-width: 100px;
+      margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    .hero h1 .neon {
       color: #1ee08c;
       text-shadow: 0 0 6px rgba(30,224,140,.8);
-  
-
-    .btn-custom {
-      background-color: #000;
-      color: #fff;
-      border: 2px solid #00e676;
-      font-weight: 600;
-      padding: .75rem 1.25rem;
     }
-     .btn-custom:hover { background-color: #00e676; color: #000; }
-
-    .card {
-      background-color: var(--card);
-      color: #fff;
-      border: 1px solid #222;
-      border-radius: 1rem;
-   
-    .card-img-top { border-radius: 1rem 1rem 0 0; object-fit: cover; }
-
-    .badge-accent {
-      background-color: #00e676; color: #000; font-weight: 700;
+    .hero h1 .neon-vermelho {
+      color: #ff4d4d;
+      text-shadow: 0 0 8px #ff4d4d, 0 0 16px #ff4d4d;
     }
-
-    <style>
-        body {
-            background-color: #000;
-            color: white;
-            text-align: center;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        h1 {
-            font-family: 'Bebas Neue', sans-serif;
-        }
-
-        .hero {
-            padding: 50px 15px;
-        }
-
-        .neon-red {
-            color: #1cf300;
-            text-shadow: 0 0 5px #2bff00, 0 0 10px #005103, 0 0 20px #000000;
-        }
+    .hero p {
+      font-size: 1rem;
+      margin-top: 10px;
+    }
     .btn-comprar {
       margin-top: 20px;
       font-weight: bold;
@@ -119,14 +93,6 @@
       transform: scale(1.05);
     }
 
-    /* Nova classe para neon vermelho */
-        .neon-vermelho {
-            color: #ff4d4d; /* Vermelho neon */
-            text-shadow:
-                0 0 5px #ff4d4d,
-                0 0 10px #ff4d4d,
-                0 0 20px #ff4d4d,
-                0 0 40px #ff4d4d;
         }
 
         .btn-custom {
@@ -355,7 +321,7 @@
 
   <!-- Banner com cupom -->
   <div id="banner-cupom">
-    <strong>USE CUPOM: GANHE DESCONTO!</strong>
+    <strong>USE CUPOM [XITEI] E GANHE DESCONTO!</strong>
   </div>
 
   <!-- Hero -->
@@ -505,119 +471,126 @@
     </div>
   </section>
  </div>
-    <!-- Substitua TODO O BLOCO abaixo pelo seu novo carrossel de feedbacks (depoimentos) -->
 
-<div class="text-center p-3 mt-2">
-   <h1 class="display-2 text-light"> 
-        <span class="neon-red">
-            FeedBacks clientes
-        </span>
-    </h1>
-</div>
-
-<div id="carouselDepoimentos" class="carousel slide container py-5" data-bs-ride="carousel">
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <div class="d-flex justify-content-center">
-                <div class="card text-white text-center p-4 rounded-4"
-                    style="background-color: #121212; width: 90%; max-width: 400px;">
-                    <img src="img site/pvsocial (1).webp" alt="Depoimento 1" class="img-fluid">
-                    <div class="mb-2 mt-2">
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <div class="d-flex justify-content-center">
-                <div class="card text-white text-center p-4 rounded-4"
-                    style="background-color: #121212; width: 90%; max-width: 400px;">
-                    <img src="img site/pvsocial (2).webp" alt="Depoimento 2" class="img-fluid">
-                    <div class="mb-2 mt-2">
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <div class="d-flex justify-content-center">
-                <div class="card text-white text-center p-4 rounded-4"
-                    style="background-color: #121212; width: 90%; max-width: 400px;">
-                    <img src="img site/pvsocial (3).webp" alt="Depoimento 3" class="img-fluid">
-                    <div class="mb-2 mt-2">
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <div class="d-flex justify-content-center">
-                <div class="card text-white text-center p-4 rounded-4"
-                    style="background-color: #121212; width: 90%; max-width: 400px;">
-                    <img src="img site/pvsocial (4).webp" alt="Depoimento 4" class="img-fluid">
-                    <div class="mb-2 mt-2">
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <div class="d-flex justify-content-center">
-                <div class="card text-white text-center p-4 rounded-4"
-                    style="background-color: #121212; width: 90%; max-width: 400px;">
-                    <img src="img site/pvsocial (5).webp" alt="Depoimento 5" class="img-fluid">
-                    <div class="mb-2 mt-2">
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <div class="d-flex justify-content-center">
-                <div class="card text-white text-center p-4 rounded-4"
-                    style="background-color: #121212; width: 90%; max-width: 400px;">
-                    <img src="img site/pvsocial (6).webp" alt="Depoimento 6" class="img-fluid">
-                    <div class="mb-2 mt-2">
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="text-center p-3 mt-2">
+       <h1 class="display-2 text-light"> 
+            <span class="neon-red">
+                FeedBacks clientes
+            </span>
+        </h1>
     </div>
-    <!-- Controles -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselDepoimentos" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
-        <span class="visually-hidden">Anterior</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselDepoimentos" data-bs-slide="next">
-        <span class="carousel-control-next-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
-        <span class="visually-hidden">Próximo</span>
-    </button>
-</div>
+
+    <div id="carouselDepoimentos" class="carousel slide container py-5" data-bs-ride="carousel">
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+                <div class="d-flex justify-content-center">
+                    <div class="card text-white text-center p-4 rounded-4"
+                        style="background-color: #121212; width: 90%; max-width: 400px;">
+                        <img src="img site/pvsocial (1).webp" alt="Depoimento 1" class="img-fluid">
+                        <div class="mb-2 mt-2">
+                            <i class="bi bi-star-fill star-green"></i>
+                            <i class="bi bi-star-fill star-green"></i>
+                            <i class="bi bi-star-fill star-green"></i>
+                            <i class="bi bi-star-fill star-green"></i>
+                            <i class="bi bi-star-fill star-green"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="d-flex justify-content-center">
+                    <div class="card text-white text-center p-4 rounded-4"
+                        style="background-color: #121212; width: 90%; max-width: 400px;">
+                        <img src="img site/pvsocial (2).webp" alt="Depoimento 2" class="img-fluid">
+                        <div class="mb-2 mt-2">
+                            <i class="bi bi-star-fill star-green"></i>
+                            <i class="bi bi-star-fill star-green"></i>
+                            <i class="bi bi-star-fill star-green"></i>
+                            <i class="bi bi-star-fill star-green"></i>
+                            <i class="bi bi-star-fill star-green"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="d-flex justify-content-center">
+                    <div class="card text-white text-center p-4 rounded-4"
+                        style="background-color: #121212; width: 90%; max-width: 400px;">
+                        <img src="img site/pvsocial (3).webp" alt="Depoimento 3" class="img-fluid">
+                        <div class="mb-2 mt-2">
+                            <i class="bi bi-star-fill star-green"></i>
+                            <i class="bi bi-star-fill star-green"></i>
+                            <i class="bi bi-star-fill star-green"></i>
+                            <i class="bi bi-star-fill star-green"></i>
+                            <i class="bi bi-star-fill star-green"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="d-flex justify-content-center">
+                    <div class="card text-white text-center p-4 rounded-4"
+                        style="background-color: #121212; width: 90%; max-width: 400px;">
+                        <img src="img site/pvsocial (4).webp" alt="Depoimento 3" class="img-fluid">
+                        <div class="mb-2 mt-2">
+                            <i class="bi bi-star-fill star-green"></i>
+                            <i class="bi bi-star-fill star-green"></i>
+                            <i class="bi bi-star-fill star-green"></i>
+                            <i class="bi bi-star-fill star-green"></i>
+                            <i class="bi bi-star-fill star-green"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="d-flex justify-content-center">
+                    <div class="card text-white text-center p-4 rounded-4"
+                        style="background-color: #121212; width: 90%; max-width: 400px;">
+                        <img src="img site/pvsocial (5).webp" alt="Depoimento 3" class="img-fluid">
+                        <div class="mb-2 mt-2">
+                            <i class="bi bi-star-fill star-green"></i>
+                            <i class="bi bi-star-fill star-green"></i>
+                            <i class="bi bi-star-fill star-green"></i>
+                            <i class="bi bi-star-fill star-green"></i>
+                            <i class="bi bi-star-fill star-green"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="d-flex justify-content-center">
+                    <div class="card text-white text-center p-4 rounded-4"
+                        style="background-color: #121212; width: 90%; max-width: 400px;">
+                        <img src="img site/pvsocial (6).webp" alt="Depoimento 3" class="img-fluid">
+                        <div class="mb-2 mt-2">
+                            <i class="bi bi-star-fill star-green"></i>
+                            <i class="bi bi-star-fill star-green"></i>
+                            <i class="bi bi-star-fill star-green"></i>
+                            <i class="bi bi-star-fill star-green"></i>
+                            <i class="bi bi-star-fill star-green"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Controles -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselDepoimentos" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselDepoimentos" data-bs-slide="next">
+            <span class="carousel-control-next-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+            <span class="visually-hidden">Próximo</span>
+        </button>
+       </div>
   <!-- Garantia -->
   <section class="py-5 bg-dark text-center text-white">
     <div class="container">
