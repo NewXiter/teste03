@@ -118,6 +118,121 @@
             opacity: 0;
             animation: aparecer 0.5s forwards, desaparecer 0.5s forwards 4.5s;
         }
+ }
+    .hero img { max-width: 90px; margin-bottom: 16px; }
+
+    .tagline { font-size: 1.9rem; line-height: 1.15; margin-bottom: 8px; }
+    .neon {
+      color: #1ee08c;
+      text-shadow: 0 0 6px rgba(30,224,140,.8);
+    }
+
+    .btn-custom {
+      background-color: #000;
+      color: #fff;
+      border: 2px solid #00e676;
+      font-weight: 600;
+      padding: .75rem 1.25rem;
+    }
+    .btn-custom:hover { background-color: #00e676; color: #000; }
+
+    .card {
+      background-color: var(--card);
+      color: #fff;
+      border: 1px solid #222;
+      border-radius: 1rem;
+    }
+    .card-img-top { border-radius: 1rem 1rem 0 0; object-fit: cover; }
+
+    .badge-accent {
+      background-color: #00e676; color: #000; font-weight: 700;
+    }
+
+    <style>
+        body {
+            background-color: #000;
+            color: white;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        h1 {
+            font-family: 'Bebas Neue', sans-serif;
+        }
+
+        .hero {
+            padding: 50px 15px;
+        }
+
+        .hero img {
+            max-width: 120px;
+            margin-bottom: 20px;
+        }
+
+        .neon-red {
+            color: #1cf300;
+            text-shadow: 0 0 5px #2bff00, 0 0 10px #005103, 0 0 20px #000000;
+        }
+/* Nova classe para neon vermelho */
+        .neon-vermelho {
+            color: #ff4d4d; /* Vermelho neon */
+            text-shadow:
+                0 0 5px #ff4d4d,
+                0 0 10px #ff4d4d,
+                0 0 20px #ff4d4d,
+                0 0 40px #ff4d4d;
+        }
+
+        .btn-custom {
+            background-color: #000000;
+            color: rgb(255, 255, 255);
+            border: solid 2px #00ff00;
+            font-weight: bold;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-custom:hover {
+            background-color: #00cc00;
+            color: white;
+        }
+
+        .video-neon {
+            border-radius: 20px;
+            box-shadow: 0 0 10px #00ff00, 0 0 13px #00ff00;
+            overflow: hidden;
+        }
+
+        .video-neon iframe {
+            border: none;
+            border-radius: 20px;
+        }
+
+        .card {
+            color: white;
+            background-color: #121212;
+            border-radius: 1rem;
+        }
+
+        .card-img-top {
+            border-radius: 1rem 1rem 0 0;
+            object-fit: cover;
+            max-height: 180px;
+            width: 100%;
+            display: block;
+        }
+
+        .star-green {
+            color: #00ff00;
+            font-size: 1.2rem;
+        }
+
+        .card.text-white img {
+            border-radius: 1rem;
+            max-height: 330px;
+            object-fit: cover;
+            width: 100%;
+            margin-bottom: 15px;
+        }
 
         .pacote-card ul.lista-beneficios li {
             margin-bottom: 6px;
@@ -550,7 +665,7 @@
 
   <!-- Banner com cupom -->
   <div id="banner-cupom">
-    <strong>USE CUPOM [XITEI] GANHE 11 DESCONTO!</strong>
+    <strong>USE CUPOM [XITEI] GANHE 12 DESCONTO!</strong>
   </div>
 
   <!-- Hero -->
