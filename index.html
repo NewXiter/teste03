@@ -283,40 +283,36 @@
     </style>
 
     <style>
-        .notificacao {
-            background-color: #0b8200;
-            color: #fff;
-            padding: 12px 20px;
-            border-radius: 10px;
-            margin-top: 10px;
-            font-size: 14px;
-            opacity: 0;
-            animation: aparecer 0.5s forwards, desaparecer 0.5s forwards 4.5s;
-        }
+         }
+    /* Notificações dinâmica */
+    #notificacoes {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 9999;
+    }
+    .notificacao {
+      background-color: #0b8200;
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 8px;
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      font-size: 0.9rem;
+      box-shadow: 0 0 10px rgba(0,255,118,0.7);
+      opacity: 0;
+      animation: aparecer 0.5s forwards, desaparecer 0.5s forwards 4.5s;
+    }
+    @keyframes aparecer {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes desaparecer {
+      from { opacity: 1; transform: translateY(0); }
+      to { opacity: 0; transform: translateY(20px); }
+    }
 
-        @keyframes aparecer {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes desaparecer {
-            from {
-                opacity: 1;
-                transform: translateY(0);
-            }
-
-            to {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-        }
     </style>
 
 </head>
@@ -324,7 +320,7 @@
 <body>
   <!-- Banner com cupom -->
   <div id="banner-cupom">
-    <strong>CUPOM: XITEI GANHE SUPER DESCONTO!</strong>
+    <strong>USE CUPOM: XITEI SUPER DESCONTO!</strong>
   </div>
      <!-- Hero -->
     <section class="hero">
