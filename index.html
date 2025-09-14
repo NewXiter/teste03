@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>New sensi</title>
+  <title>New sensi - Notificações de Compradores</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600;700;800;900&display=swap" rel="stylesheet" />
@@ -27,12 +27,195 @@
     fbq('init', '3525977697696631');
     fbq('track', 'PageView');
   </script>
+
+  <!-- Estilos para Notificações -->
+  <style>
+    /* Sistema de Notificações de Compras */
+    .purchase-notification {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      border: 2px solid #5CFF4D;
+      border-radius: 15px;
+      padding: 15px 20px;
+      max-width: 350px;
+      box-shadow: 0 10px 30px rgba(92, 255, 77, 0.3);
+      z-index: 10000;
+      transform: translateX(-120%);
+      transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      backdrop-filter: blur(10px);
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .purchase-notification.show {
+      transform: translateX(0);
+    }
+
+    .notification-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .notification-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #5CFF4D, #4ae63a);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: #1a1a1a;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    .notification-content h4 {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 700;
+      color: #5CFF4D;
+    }
+
+    .notification-content p {
+      margin: 0;
+      font-size: 12px;
+      color: #ccc;
+      line-height: 1.4;
+    }
+
+    .notification-time {
+      font-size: 10px;
+      color: #888;
+      margin-top: 5px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .notification-close {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      background: none;
+      border: none;
+      color: #888;
+      cursor: pointer;
+      font-size: 16px;
+      padding: 0;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: color 0.3s ease;
+    }
+
+    .notification-close:hover {
+      color: #fff;
+    }
+
+    .notification-product {
+      font-weight: 600;
+      color: #5CFF4D;
+    }
+
+    /* Animação de entrada */
+    @keyframes slideInBounce {
+      0% {
+        transform: translateX(-120%);
+        opacity: 0;
+      }
+      60% {
+        transform: translateX(10px);
+        opacity: 1;
+      }
+      80% {
+        transform: translateX(-5px);
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .purchase-notification.animate-in {
+      animation: slideInBounce 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    /* Responsivo */
+    @media (max-width: 768px) {
+      .purchase-notification {
+        left: 10px;
+        right: 10px;
+        max-width: calc(100% - 20px);
+        bottom: 10px;
+      }
+    }
+
+    /* Contador de vendas no topo */
+    .sales-counter {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, #ff4757, #ff3742);
+      color: white;
+      padding: 10px 15px;
+      border-radius: 25px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      box-shadow: 0 5px 15px rgba(255, 71, 87, 0.4);
+      z-index: 9999;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-10px);
+      }
+      60% {
+        transform: translateY(-5px);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .sales-counter {
+        top: 10px;
+        right: 10px;
+        font-size: 11px;
+        padding: 8px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Facebook Pixel noscript (movido para body) -->
   <noscript>
     <img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=3525977697696631&ev=PageView&noscript=1" />
   </noscript>
-</head>
-<body>
+
+  <!-- Contador de vendas -->
+  <div class="sales-counter">
+    <i class="fas fa-fire"></i> <span id="sales-count">127</span> vendas hoje!
+  </div>
+
+  <!-- Container para notificações -->
+  <div id="notification-container"></div>
+
   <!-- Cabeçalho superior -->
   <header class="topbar">
     <div class="container">
@@ -279,25 +462,6 @@
     </div>
   </section>
 
-  <!-- Seção Mentoria (Comentada, caso queira ativar futuramente) -->
-  <!--
-  <section class="mentor">
-    <div class="container">
-      <div class="mentor-grid">
-        <div class="mentor-text" data-reveal>
-          <h3>Quem será seu mentor?</h3>
-          <h4>White FF, o criador dos métodos e das sensibilidades VIP</h4>
-          <p>Após anos de prática e ajustes, reunimos as técnicas que elevam sua
-            taxa de capa de forma previsível — sem hacks.</p>
-        </div>
-        <div class="mentor-media" data-reveal style="--delay:.1s">
-          <img src="assets/img/mentor.png" alt="Mentor" />
-        </div>
-      </div>
-    </div>
-  </section>
-  -->
-
   <!-- FAQ -->
   <section class="faq">
     <div class="container">
@@ -347,5 +511,214 @@
 
   <!-- Script principal -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Script das Notificações -->
+  <script>
+    // Sistema de Notificações de Compras
+    class PurchaseNotificationSystem {
+      constructor() {
+        this.container = document.getElementById('notification-container');
+        this.salesCounter = document.getElementById('sales-count');
+        this.currentSales = 127;
+        this.isActive = true;
+        
+        // Lista de nomes brasileiros realistas
+        this.names = [
+          'João Silva', 'Maria Santos', 'Pedro Oliveira', 'Ana Costa', 'Carlos Souza',
+          'Fernanda Lima', 'Gabriel Alves', 'Juliana Ferreira', 'Rafael Martins', 'Camila Rocha',
+          'Lucas Pereira', 'Beatriz Carvalho', 'Thiago Ribeiro', 'Larissa Gomes', 'Felipe Barbosa',
+          'Mariana Dias', 'Bruno Nascimento', 'Isabela Cardoso', 'Diego Araújo', 'Amanda Correia',
+          'Mateus Teixeira', 'Natália Monteiro', 'Vinicius Castro', 'Letícia Moreira', 'André Fonseca',
+          'Bruna Cavalcanti', 'Guilherme Pinto', 'Yasmin Nunes', 'Leonardo Freitas', 'Stephanie Ramos'
+        ];
+        
+        // Produtos disponíveis
+        this.products = [
+          { name: 'Painel XIT Básico', price: 'R$ 29,90' },
+          { name: 'Painel XIT Premium', price: 'R$ 29,90' },
+          { name: 'Painel XIT Plus', price: 'R$ 49,90' }
+        ];
+        
+        // Cidades brasileiras
+        this.cities = [
+          'São Paulo', 'Rio de Janeiro', 'Belo Horizonte', 'Salvador', 'Brasília',
+          'Fortaleza', 'Curitiba', 'Recife', 'Porto Alegre', 'Manaus',
+          'Belém', 'Goiânia', 'Guarulhos', 'Campinas', 'São Luís',
+          'Maceió', 'Duque de Caxias', 'Natal', 'Teresina', 'São Bernardo',
+          'Nova Iguaçu', 'João Pessoa', 'Santos', 'Ribeirão Preto', 'Uberlândia'
+        ];
+        
+        this.init();
+      }
+      
+      init() {
+        // Primeira notificação após 3 segundos
+        setTimeout(() => {
+          this.showNotification();
+        }, 3000);
+        
+        // Notificações regulares a cada 8-15 segundos
+        this.scheduleNextNotification();
+        
+        // Atualizar contador de vendas
+        this.updateSalesCounter();
+      }
+      
+      scheduleNextNotification() {
+        if (!this.isActive) return;
+        
+        const delay = Math.random() * 7000 + 8000; // 8-15 segundos
+        setTimeout(() => {
+          this.showNotification();
+          this.scheduleNextNotification();
+        }, delay);
+      }
+      
+      showNotification() {
+        if (!this.isActive) return;
+        
+        const name = this.getRandomName();
+        const product = this.getRandomProduct();
+        const city = this.getRandomCity();
+        const timeAgo = this.getRandomTime();
+        
+        const notification = this.createNotificationElement(name, product, city, timeAgo);
+        this.container.appendChild(notification);
+        
+        // Mostrar notificação
+        setTimeout(() => {
+          notification.classList.add('show', 'animate-in');
+        }, 100);
+        
+        // Remover após 6 segundos
+        setTimeout(() => {
+          this.hideNotification(notification);
+        }, 6000);
+        
+        // Atualizar contador
+        this.incrementSalesCounter();
+      }
+      
+      createNotificationElement(name, product, city, timeAgo) {
+        const notification = document.createElement('div');
+        notification.className = 'purchase-notification';
+        
+        notification.innerHTML = `
+          <button class="notification-close" onclick="this.parentElement.remove()">×</button>
+          <div class="notification-header">
+            <div class="notification-icon">
+              <i class="fas fa-check"></i>
+            </div>
+            <div class="notification-content">
+              <h4>Nova Compra Realizada!</h4>
+              <p><strong>${name}</strong> de <strong>${city}</strong> acabou de comprar o <span class="notification-product">${product.name}</span> por <strong>${product.price}</strong></p>
+            </div>
+          </div>
+          <div class="notification-time">
+            <i class="fas fa-clock"></i> ${timeAgo}
+          </div>
+        `;
+        
+        return notification;
+      }
+      
+      hideNotification(notification) {
+        notification.classList.remove('show');
+        setTimeout(() => {
+          if (notification.parentElement) {
+            notification.remove();
+          }
+        }, 500);
+      }
+      
+      getRandomName() {
+        return this.names[Math.floor(Math.random() * this.names.length)];
+      }
+      
+      getRandomProduct() {
+        return this.products[Math.floor(Math.random() * this.products.length)];
+      }
+      
+      getRandomCity() {
+        return this.cities[Math.floor(Math.random() * this.cities.length)];
+      }
+      
+      getRandomTime() {
+        const options = [
+          'agora mesmo',
+          '1 minuto atrás',
+          '2 minutos atrás',
+          '3 minutos atrás',
+          '5 minutos atrás',
+          '7 minutos atrás',
+          '10 minutos atrás'
+        ];
+        return options[Math.floor(Math.random() * options.length)];
+      }
+      
+      incrementSalesCounter() {
+        // Incrementar vendas ocasionalmente
+        if (Math.random() < 0.3) {
+          this.currentSales++;
+          this.updateSalesCounter();
+        }
+      }
+      
+      updateSalesCounter() {
+        if (this.salesCounter) {
+          this.salesCounter.textContent = this.currentSales;
+        }
+      }
+      
+      // Métodos para controlar o sistema
+      pause() {
+        this.isActive = false;
+      }
+      
+      resume() {
+        this.isActive = true;
+        this.scheduleNextNotification();
+      }
+      
+      stop() {
+        this.isActive = false;
+        const notifications = document.querySelectorAll('.purchase-notification');
+        notifications.forEach(notification => notification.remove());
+      }
+    }
+    
+    // Inicializar sistema quando a página carregar
+    document.addEventListener('DOMContentLoaded', function() {
+      window.purchaseNotifications = new PurchaseNotificationSystem();
+      
+      // Pausar notificações quando o usuário não está vendo a página
+      document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+          window.purchaseNotifications.pause();
+        } else {
+          window.purchaseNotifications.resume();
+        }
+      });
+    });
+    
+    // Funções globais para controle (opcional)
+    function pauseNotifications() {
+      if (window.purchaseNotifications) {
+        window.purchaseNotifications.pause();
+      }
+    }
+    
+    function resumeNotifications() {
+      if (window.purchaseNotifications) {
+        window.purchaseNotifications.resume();
+      }
+    }
+    
+    function stopNotifications() {
+      if (window.purchaseNotifications) {
+        window.purchaseNotifications.stop();
+      }
+    }
+  </script>
 </body>
 </html>
